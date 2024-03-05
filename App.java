@@ -9,7 +9,8 @@ public class App {
         MenuInicial.Escribir();
         opcion = Integer.parseInt(in.nextLine());
         if(opcion==1){
-            System.out.println("Introduce la contraseña");
+            System.out.println("Introduce la contraseña")
+            System.out.println("d");;
         }
 
     }
