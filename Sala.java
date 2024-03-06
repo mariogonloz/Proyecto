@@ -7,4 +7,16 @@ public class Sala {
         this.nombre=nombre;
         this.codigo=codigo;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public String toString(){
+        return nombre+", "+codigo;
+    }
 }
