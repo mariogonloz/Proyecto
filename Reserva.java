@@ -19,4 +19,19 @@ public class Reserva {
         return fechaInicio+"-"+fechaFin+", "+sala+", "+departamento;
     }
 
+    public LocalDateTime getFechaFin() {
+        return fechaFin;
+    }
+
+    public LocalDateTime getFechaInicio() {
+        return fechaInicio;
+    }
+
+    public Sala getSala() {
+        return sala;
+    }
+
+    public Departamento getDepartamento() {
+        return departamento;
+    }
 }
