@@ -7,4 +7,8 @@ public class Sala {
         this.nombre=nombre;
         this.codigo=codigo;
     }
+
+    public String toString(){
+        return nombre+", "+codigo;
+    }
 }

@@ -15,4 +15,8 @@ public class Reserva {
         this.departamento=departamento;
     }
 
+    public String toString(){
+        return fechaInicio+"-"+fechaFin+", "+sala+", "+departamento;
+    }
+
 }
