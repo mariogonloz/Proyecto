@@ -1,6 +1,13 @@
-public class MenuDepartamento extends MenuInicial{
+import java.util.ArrayList;
+import java.util.Scanner;
 
-    public static void Escribir(){
-        System.out.println("Has entrado al menú del departamento ");
+public class MenuDepartamento {
+    String codDepart;
+    Scanner in = new Scanner(System.in);
+
+    protected static void Escribir(){
+        System.out.println("Has entrado al menú de departamento\n" +
+                            "Introduce el códido del departamento");
+
     }
 }
