@@ -37,7 +37,7 @@ public class Departamento {
         }
     }
 
-    /*Primero recorro el ArrayList entero, después me aseguro que el onjeto sea una Reserva
+    /*Primero recorro el ArrayList entero, después me aseguro que el objeto sea una Reserva
     y en el ultimo if comparo la fechaIncial y la sala, para eliminar o no la reserva
      */
     public void cancelar(LocalDateTime hora, Sala sala){

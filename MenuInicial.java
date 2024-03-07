@@ -6,14 +6,15 @@ public class MenuInicial {
         boolean error = false;
         final String contr = "ADMIN";
         String contrIntroducida;
+        String codDept;
         Scanner in = new Scanner(System.in);
 
-        System.out.println("Elige un inicio de sesión\n" +
+        do{
+        System.out.print(
                 "1-Login de Administrador\n" +
                 "2-Login de Departamento\n" +
-                "3-Salir");
+                "3-Salir\nElige un inicio de sesión: ");
         /*Nos aseguramos que el usuario solo introduce valores numéricos entre 1 y 3*/
-        do {
             try {
                 do {
                     error = false;
@@ -22,7 +23,7 @@ public class MenuInicial {
                         /*Si la contraseña es correcta, mostramos el menú de admin, si no,
                         mostrará un mensaje de contraseña errónea y volverá a preguntar la contraseña*/
                         do {
-                            System.out.println("Introduce la contraseña");
+                            System.out.print("Introduce la contraseña: ");
                             contrIntroducida = in.nextLine();
 
                             if (contrIntroducida.equals(contr)) {
@@ -34,7 +35,7 @@ public class MenuInicial {
                             }
                         } while (!contrIntroducida.equals(contr));
                     } else if (opcion == 2) {
-                        System.out.println("Introduce el código del departamento");
+                        MenuDepartamento.Escribir();
                     }
                 } while (opcion != 3);
             } catch (NumberFormatException nfe) {
@@ -43,5 +44,6 @@ public class MenuInicial {
                 error = true;
             }
         } while (error);
+        System.out.println("Hasta luego");
     }
 }
