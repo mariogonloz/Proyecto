@@ -2,16 +2,9 @@ import java.awt.*;
 import java.util.Scanner;
 
 public class App {
-    public static void main(String[] args) {
-        int opcion;
-        int opcionAdmin = 0;
-        final String contr = "ADMIN";
-        String contrIntroducida;
-        boolean error = false;
-        Scanner in = new Scanner(System.in);
+    public static void main(String[] args){
 
-        /*Sacamos el menú de inicio de sesión y nos aseguramos que el usuario solo
-        introduce valores numéricos entre 1 y 3*/
+        /*Sacamos el menú de inicio de sesión*/
         do {
             MenuInicial.Escribir();
             try {
@@ -22,8 +15,7 @@ public class App {
                         do {
                             System.out.println("Introduce la contraseña");
                             contrIntroducida = in.nextLine();
-                        /*Si la contraseña es correcta, mostramos el menú de admin, si no,
-                        mostrará un mensaje de contraseña errónea y volverá a preguntar la contraseña*/
+
                             if (contrIntroducida.equals(contr)) {
                                 MenuAdministrador.Escribir();
                                 try {
@@ -63,8 +55,7 @@ public class App {
                             }
 
                         } while (!contrIntroducida.equals(contr));
-                    } else if (opcion == 2) {
-                        System.out.println("Introduce el código del departamento");
+
 
                     }
                 } while (opcion != 3);
