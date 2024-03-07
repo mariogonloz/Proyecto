@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class MenuInicial {
     protected static void Escribir() {
-        int opcion;
+        int opcion=0;
         boolean error = false;
         final String contr = "ADMIN";
         String contrIntroducida;
@@ -16,7 +16,7 @@ public class MenuInicial {
                 "3-Salir\nElige un inicio de sesión: ");
         /*Nos aseguramos que el usuario solo introduce valores numéricos entre 1 y 3*/
             try {
-                do {
+
                     error = false;
                     opcion = Integer.parseInt(in.nextLine());
                     if (opcion == 1) {
@@ -37,13 +37,13 @@ public class MenuInicial {
                     } else if (opcion == 2) {
                         MenuDepartamento.Escribir();
                     }
-                } while (opcion != 3);
+
             } catch (NumberFormatException nfe) {
                 System.out.println("Opción no válida, pulsa intro para volver a elegir una opción");
                 in.nextLine();
                 error = true;
             }
-        } while (error);
+        } while (error || opcion!=3);
         System.out.println("Hasta luego");
     }
 }

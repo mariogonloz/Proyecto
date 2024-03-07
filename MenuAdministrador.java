@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class MenuAdministrador {
     protected static void Escribir() {
         boolean error = false;
-        int opcion;
+        int opcion=0;
         Scanner in = new Scanner(System.in);
 
         do {
@@ -19,8 +19,7 @@ public class MenuAdministrador {
                             "8-Cerrar sesión\n" +
                             "Elige una opción: ");
             /*Nos aseguramos que el usuario introduce un valor númerico*/
-            try {
-                do {
+
                     error = false;
                     opcion = Integer.parseInt(in.nextLine());
                     if(opcion == 1){
@@ -37,15 +36,12 @@ public class MenuAdministrador {
 
                     }else if(opcion == 7){
 
+                    }else if (opcion==8){
+                        System.out.println("adios");
                     }
-                } while (opcion != 8);
-                MenuInicial.Escribir();
-            } catch (NumberFormatException nfe) {
-                System.out.println("Opción no válida, pulsa intro para volver a elegir una opción");
-                in.nextLine();
-                error = true;
-            }
-        } while (error);
+
+
+        } while (opcion!=8);
     }
 }
 
