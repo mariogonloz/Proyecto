@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class MenuAdministrador {
     protected static void Escribir() {
         boolean error = false;
-        int opcion=0;
+        int opcion = 0;
         Scanner in = new Scanner(System.in);
 
         do {
@@ -20,28 +20,32 @@ public class MenuAdministrador {
                             "Elige una opción: ");
             /*Nos aseguramos que el usuario introduce un valor númerico*/
 
-                    error = false;
-                    opcion = Integer.parseInt(in.nextLine());
-                    if(opcion == 1){
+            opcion = Integer.parseInt(in.nextLine());
+            if (opcion == 1) {
+                Departamentos.list();
+            } else if (opcion == 2) {
+                String
+            } else if (opcion == 3) {
 
-                    }else if(opcion == 2){
+            } else if (opcion == 4) {
+                Salas.list();
+            } else if (opcion == 5) {
+                String nombreSala;
+                String codSala;
+                System.out.println("Introduce el nombre de la sala");
+                nombreSala = in.nextLine();
+                System.out.println("Introduce el código de la sala");
+                codSala = in.nextLine();
+                Salas.add(nombreSala, codSala);
+            } else if (opcion == 6) {
+                String codSala;
+                System.out.println("Introduce el código de la sala");
+                codSala = in.nextLine();
+                Salas.remove(codSala);
+            } else if (opcion == 7) {
 
-                    }else if(opcion == 3){
+            }
 
-                    }else if(opcion == 4){
-
-                    }else if(opcion == 5){
-
-                    }else if(opcion == 6){
-
-                    }else if(opcion == 7){
-
-                    }else if (opcion==8){
-                        System.out.println("adios");
-                    }
-
-
-        } while (opcion!=8);
+        } while (opcion != 8);
     }
 }
-

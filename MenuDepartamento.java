@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-
 public class MenuDepartamento {
     String codDepart;
     Scanner in = new Scanner(System.in);
