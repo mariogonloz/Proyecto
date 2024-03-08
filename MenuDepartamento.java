@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.time.LocalTime;
 public class MenuDepartamento {
     String codDepart;
     Scanner in = new Scanner(System.in);

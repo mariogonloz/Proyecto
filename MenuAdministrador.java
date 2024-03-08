@@ -24,22 +24,31 @@ public class MenuAdministrador {
             if (opcion == 1) {
                 Departamentos.list();
             } else if (opcion == 2) {
-                String
+                String nombreDept;
+                String codDept;
+                System.out.print("Introduce el nombre del departamento: ");
+                nombreDept = in.nextLine();
+                System.out.print("Introduce el código del departamento: ");
+                codDept = in.nextLine();
+                Departamentos.add(nombreDept, codDept);
             } else if (opcion == 3) {
-
+                String codDept;
+                System.out.print("Introduce el código del departamento: ");
+                codDept = in.nextLine();
+                Departamentos.remove(codDept);
             } else if (opcion == 4) {
                 Salas.list();
             } else if (opcion == 5) {
                 String nombreSala;
                 String codSala;
-                System.out.println("Introduce el nombre de la sala");
+                System.out.print("Introduce el nombre de la sala: ");
                 nombreSala = in.nextLine();
-                System.out.println("Introduce el código de la sala");
+                System.out.print("Introduce el código de la sala: ");
                 codSala = in.nextLine();
                 Salas.add(nombreSala, codSala);
             } else if (opcion == 6) {
                 String codSala;
-                System.out.println("Introduce el código de la sala");
+                System.out.print("Introduce el código de la sala: ");
                 codSala = in.nextLine();
                 Salas.remove(codSala);
             } else if (opcion == 7) {
