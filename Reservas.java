@@ -19,16 +19,17 @@ public class Reservas {
         }
     }
 
-    public static void remove(String codigo){
+    public static void remove(LocalDate fecha, LocalTime hora, Departamento departamento, Sala sala){
         for (int i=0;i<reservas.size();i++){
-            if (reservas.get(i) instanceof Departamento){
-                if (((Departamento) reservas.get(i)).getCodigo().equals(codigo)){
-                    reservas.remove(i);
+            if (reservas.get(i) instanceof Reserva){
+                if (((Reserva) reservas.get(i)).equals(new Reserva(fecha,hora,Duration.ofHours(0),sala,departamento))){
+                        reservas.remove(i);
                 }
-                else System.out.println("No existe ningún departamento con ese código");
+                else System.out.println("No existe tal reserva");
             }
         }
     }
+
 
     public static void list(){
         for (Object o:reservas){
