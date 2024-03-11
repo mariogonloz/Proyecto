@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class MenuInicial {
     protected static void Escribir() {
         int opcion = 0;
-        boolean error = false;
+
         final String contr = "ADMIN";
         String contrIntroducida;
         String codDept;
@@ -17,7 +17,7 @@ public class MenuInicial {
             /*Nos aseguramos que el usuario solo introduce valores numéricos entre 1 y 3*/
             try {
 
-                error = false;
+
                 opcion = Integer.parseInt(in.nextLine());
                 if (opcion == 1) {
                         /*Si la contraseña es correcta, mostramos el menú de admin, si no,
@@ -35,9 +35,9 @@ public class MenuInicial {
                         }
                     } while (!contrIntroducida.equals(contr));
                 } else if (opcion == 2) {
-                    System.out.println("Introduce el códido del departamento:");
+                    System.out.print("Introduce el códido del departamento:");
                     codDept=in.nextLine();
-                    for (int i=0;i<Departamentos.departamentos.size();i++){
+                    for (int i=0;i<Departamentos.departamentosCreados;i++){
                         if (Departamentos.departamentos.get(i) instanceof Departamento dept){
                             if (dept.getCodigo().equals(codDept)){
                                 System.out.println("Has entrado en el menú del departamento " + dept.getNombre());
@@ -46,13 +46,24 @@ public class MenuInicial {
                         }
                     }
                 }
+                else if (opcion==3){
+                    System.out.println("Hasta luego");
+                }
+                else {
+                    System.out.println("No es una opción valida, pulsa espacio para volver");
+                    in.nextLine();
+                }
 
             } catch (NumberFormatException nfe) {
                 System.out.println("Opción no válida, pulsa intro para volver a elegir una opción");
                 in.nextLine();
-                error = true;
+
             }
-        } while (error || opcion != 3);
-        System.out.println("Hasta luego");
+            catch (NullPointerException npe){
+                System.out.println("No hay departamentos creados, pulsa intro para volver");
+                in.nextLine();
+            }
+        } while ( opcion != 3);
+
     }
 }

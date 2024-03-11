@@ -19,40 +19,48 @@ public class MenuAdministrador {
                             "8-Cerrar sesión\n" +
                             "Elige una opción: ");
             /*Nos aseguramos que el usuario introduce un valor númerico*/
-
-            opcion = Integer.parseInt(in.nextLine());
-            if (opcion == 1) {
-                Departamentos.list();
-            } else if (opcion == 2) {
-                String nombreDept;
-                String codDept;
-                System.out.print("Introduce el nombre del departamento: ");
-                nombreDept = in.nextLine();
-                System.out.print("Introduce el código del departamento: ");
-                codDept = in.nextLine();
-                Departamentos.add(nombreDept, codDept);
-            } else if (opcion == 3) {
-                String codDept;
-                System.out.print("Introduce el código del departamento: ");
-                codDept = in.nextLine();
-                Departamentos.remove(codDept);
-            } else if (opcion == 4) {
-                Salas.list();
-            } else if (opcion == 5) {
-                String nombreSala;
-                String codSala;
-                System.out.print("Introduce el nombre de la sala: ");
-                nombreSala = in.nextLine();
-                System.out.print("Introduce el código de la sala: ");
-                codSala = in.nextLine();
-                Salas.add(nombreSala, codSala);
-            } else if (opcion == 6) {
-                String codSala;
-                System.out.print("Introduce el código de la sala: ");
-                codSala = in.nextLine();
-                Salas.remove(codSala);
-            } else if (opcion == 7) {
-
+            try {
+                opcion = Integer.parseInt(in.nextLine());
+                if (opcion == 1) {
+                    Departamentos.list();
+                } else if (opcion == 2) {
+                    String nombreDept;
+                    String codDept;
+                    System.out.print("Introduce el nombre del departamento: ");
+                    nombreDept = in.nextLine();
+                    System.out.print("Introduce el código del departamento: ");
+                    codDept = in.nextLine();
+                    Departamentos.add(nombreDept, codDept);
+                } else if (opcion == 3) {
+                    String codDept;
+                    System.out.print("Introduce el código del departamento: ");
+                    codDept = in.nextLine();
+                    Departamentos.remove(codDept);
+                } else if (opcion == 4) {
+                    Salas.list();
+                } else if (opcion == 5) {
+                    String nombreSala;
+                    String codSala;
+                    System.out.print("Introduce el nombre de la sala: ");
+                    nombreSala = in.nextLine();
+                    System.out.print("Introduce el código de la sala: ");
+                    codSala = in.nextLine();
+                    Salas.add(nombreSala, codSala);
+                } else if (opcion == 6) {
+                    String codSala;
+                    System.out.print("Introduce el código de la sala: ");
+                    codSala = in.nextLine();
+                    Reservas.remove(codSala);
+                    Salas.remove(codSala);
+                } else if (opcion == 7) {
+                    Reservas.list();
+                }
+                else if (opcion==8){
+                    System.out.println("Has salido del menú de Administrador");
+                }
+            }catch (NullPointerException npe){
+                System.out.println("Esta vacío, pulsa intro para volver a elegir");
+                in.nextLine();
             }
 
         } while (opcion != 8);

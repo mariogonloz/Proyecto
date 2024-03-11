@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 public class Reservas {
  public static ArrayList reservas;
+ public static int reservasCreadas;
 
     public static void add(LocalDate fecha, LocalTime hora, Duration duracion, Sala sala, Departamento departamento){
         boolean valido=true;
@@ -32,10 +33,25 @@ public class Reservas {
         }
     }
 
+    public static void remove (String sala){
+        for (int i=0;i<reservasCreadas;i++){
+            if (reservas.get(i) instanceof Reserva r){
+                if (r.getSala().getCodigo().equals(sala) || r.getSala().getNombre().equals(sala)){
+                    reservas.remove(i);
+                }
+            }
+        }
+    }
+
 
     public static void list(){
-        for (Object o:reservas){
-            System.out.println(o);
+        if (reservasCreadas==0){
+            System.out.println("No hay reservas creadas");
+        }
+        else {
+            for (Object o : reservas) {
+                System.out.println(o);
+            }
         }
     }
 }
