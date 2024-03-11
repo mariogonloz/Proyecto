@@ -41,7 +41,7 @@ public class MenuInicial {
                         if (Departamentos.departamentos.get(i) instanceof Departamento dept){
                             if (dept.getCodigo().equals(codDept)){
                                 System.out.println("Has entrado en el menú del departamento " + dept.getNombre());
-                                MenuDepartamento.Escribir();
+                                MenuDepartamento.Escribir(dept);
                             }
                         }
                     }

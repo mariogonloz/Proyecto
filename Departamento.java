@@ -1,4 +1,7 @@
+import java.time.Duration;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.ArrayList;
 
 public class Departamento {
@@ -20,8 +23,9 @@ public class Departamento {
         return codigo;
     }
 
-    public void reservar(LocalDateTime hora1, LocalDateTime hora2, Sala sala){
-        reservas.add(new Reserva(hora1, hora2, sala, this));
+    public void reservar(LocalDate fecha, LocalTime hora,Duration duracion, Sala sala){
+        reservas.add(new Reserva(fecha, hora,duracion, sala, this));
+        Reservas.add(fecha, hora,duracion, sala, this);
     }
 
     public String toString () {
@@ -40,14 +44,12 @@ public class Departamento {
     /*Primero recorro el ArrayList entero, después me aseguro que el objeto sea una Reserva
     y en el ultimo if comparo la fechaIncial y la sala, para eliminar o no la reserva
      */
-    public void cancelar(LocalDateTime hora, Sala sala){
+    public void cancelar(LocalDate fecha, LocalTime hora, Sala sala){
+        Reservas.remove(fecha,hora,this,sala);
         for (int i=0;i<reservas.size();i++){
-            if (reservas.get(i) instanceof Reserva){
-                if (((Reserva) reservas.get(i)).getFechaInicio().equals(hora) && ((Reserva) reservas.get(i)).getSala().equals(sala)){
+            if (reservas.get(i) instanceof Reserva r){
+                if (r.equals(new Reserva(fecha,hora,Duration.ofHours(0),sala,this))){
                     reservas.remove(i);
-                }
-                else{
-                    System.out.println("No existe esa sala");
                 }
             }
         }
