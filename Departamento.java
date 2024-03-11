@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class Departamento {
     private String nombre;
     private String codigo;
-    public ArrayList reservas;
+    public ArrayList reservas=new ArrayList<>(2);
 
     //Constructor
     public Departamento(String nombre, String codigo){

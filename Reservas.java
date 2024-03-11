@@ -4,7 +4,7 @@ import java.time.Duration;
 import java.util.ArrayList;
 
 public class Reservas {
- public static ArrayList reservas;
+ public static ArrayList reservas=new ArrayList<>(2);
  public static int reservasCreadas;
 
     public static void add(LocalDate fecha, LocalTime hora, Duration duracion, Sala sala, Departamento departamento){
